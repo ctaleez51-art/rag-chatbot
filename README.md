@@ -23,15 +23,15 @@
 
 1. Node.js 설치: nodejs.org에서 LTS 버전을 받아 설치한다.
 2. Ollama 설치·실행: ollama.com에서 받아 설치하고 실행한다.
-3. 답 모델 받기: 터미널(Windows는 PowerShell)에서
-   ollama pull qwen3.5:2b
-4. 저장소 받기: 터미널(Windows는 PowerShell)에서
-   git clone https://github.com/ctaleez51-art/rag-chatbot.git
-   cd rag-chatbot
-5. 설치 후 켜기:
-   npm install
-   npm run dev
-6. 브라우저에서 http://localhost:5173 접속. 처음 한 번 뜻 검색용 모델(약 200MB)을 내려받는다.
+3. 답 모델 받기: 터미널(Windows는 PowerShell)에서  
+   `ollama pull qwen3.5:2b`
+4. 저장소 받기: 터미널(Windows는 PowerShell)에서  
+   `git clone https://github.com/ctaleez51-art/rag-chatbot.git`  
+   `cd rag-chatbot`
+6. 설치 후 켜기:  
+   `npm install`  
+   `npm run dev`
+8. 브라우저에서 http://localhost:5173 접속. 처음 한 번 뜻 검색용 모델(약 200MB)을 내려받는다.
 
 
 ## 출처 표시
