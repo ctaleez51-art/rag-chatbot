@@ -22,9 +22,9 @@
 ## 사용 조건
 
 1. Ollama를 설치하고 실행한 뒤 답 모델을 받는다: `ollama pull qwen3.5:2b`
-2. 이 저장소를 받아 `npm install` → `npm run dev`로 켜고, 브라우저에서 `http://localhost:5173`을 연다.
-3. 처음 열 때 뜻 검색용 모델(약 200MB)을 한 번 내려받는다. 이후에는 브라우저에 저장된 것을 쓴다.
-4. 브라우저가 Ollama(`localhost:11434`)에 직접 묻는다. 다른 주소에서 열 때는 Ollama의 `OLLAMA_ORIGINS` 환경 변수에 그 주소를 넣고 Ollama를 다시 켜야 한다(방법은 앱 화면 안내에 있음).
+2. 이 저장소를 받아 `npm install` → `npm run dev`로 켠다.
+3. 브라우저에서 `http://localhost:5173`을 연다.
+4. 처음 열 때 뜻 검색용 모델(약 200MB)을 한 번 내려받는다. 이후에는 브라우저에 저장된 것을 쓴다.
 
 ## 출처 표시
 
