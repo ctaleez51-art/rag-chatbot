@@ -10,7 +10,8 @@ const SOURCE = join(ROOT, "source");
 const QNA_FILE = join(SOURCE, "국세상담-인적공제QnA.md");
 const KW_FILE = join(SOURCE, "키워드연말정산-인적공제.md");
 const QNA_URL = "https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318";
-const KW_SOURCE = "2025년 귀속 키워드연말정산게시용.hwp";
+// 키워드 자료는 웹 주소가 없는 hwp 문서라, 깃허브에 올린 md 파일 주소를 출처로 쓴다.
+const KW_URL = "https://github.com/ctaleez51-art/rag-chatbot/blob/main/source/" + encodeURIComponent("키워드연말정산-인적공제.md");
 
 const read = (f) => readFileSync(f, "utf8").replace(/\r\n/g, "\n");
 const pad = (n) => String(n).padStart(3, "0");
@@ -52,7 +53,7 @@ function kwChunks() {
       out.push({
         id: `KW-${pad(out.length + 1)}`,
         text,
-        url: `${KW_SOURCE} · 항목 ${item.split(" ")[0]}`,
+        url: KW_URL,
         section: `키워드 연말정산 · ${item}`,
       });
     }

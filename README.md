@@ -1,32 +1,30 @@
-# React + TypeScript + Vite
+# 인적공제 상담 챗봇
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+2025년 귀속 세법 기준. 설계는 [PRD.md](PRD.md).
 
-Currently, two official plugins are available:
+## 출처 표시
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 답 아래 출처를 누르면 그 조각의 원문이 앱 안에 보인다.
+- 국세상담센터 Q&A 조각(QA-001~107)의 "원문 보기" 링크는 모두 같은 페이지(https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1318)로 간다. 이 사이트는 질문마다 따로 주소를 주지 않고, 한 페이지에서 질문을 누르면 내용을 불러오는 방식이기 때문이다.
+- 키워드 연말정산 조각(KW-001~080)은 웹 주소가 없는 문서(2025년 귀속 키워드연말정산게시용.hwp)에서 옮긴 것이라, 그 내용을 옮긴 [source/키워드연말정산-인적공제.md](source/키워드연말정산-인적공제.md)를 이 저장소에 올리고 그 주소로 연결한다.
 
-## React Compiler
+## 실험 기록
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+고정 질문 9개와 통과 기준은 [PRD.md](PRD.md) 8절.
 
-## Expanding the Oxlint configuration
+### 실험 0: 기준 실행 (모두콘 코드 그대로)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- 설정: 뜻 검색 10개 + 낱말 검색 5개 = 15개, 답 모델 qwen3.5:2b
+- 날짜: 2026-10-14
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+| 번호 | 질문 | 1. 답이 맞았나 | 2. 맞는 자료 1등 | 3. 번호 붙임 | 4. 걸린 시간 | 통과 |
+|---|---|---|---|---|---|---|
+| ① | 결혼식은 안 하고 혼인신고만 했는데 배우자 공제 되나요? | 맞음 | QA-006 (88%) | [QA-006] | 126.5초 | ✅ |
+| ② | 경로우대 추가공제는 몇 살부터 받을 수 있나요? | 틀림 (70세 이상은 맞지만 "2025년 12월 31일 이전 출생"이라고 함. 자료는 1955년) | QA-070 (84%) | QA-070 | 90.6초 | ❌ |
+| ③ | 부녀자 공제와 한부모 공제를 같이 받을 수 있나요? | | | | | |
+| ④ | 시골에 사시는 장인어른도 기본공제 받을 수 있나요? | | | | | |
+| ⑤ | 어머니가 국민연금을 1년에 600만원 받으시는데 기본공제 되나요? | | | | | |
+| ⑥ | 아버지가 올해 돌아가셨는데 경로우대 공제도 받을 수 있나요? | | | | | |
+| ⑦ | 종합소득세 신고 기한이 언제예요? | | 해당 없음 | 해당 없음 | | |
+| ⑧ | 사업용 카드로 산 커피값도 비용 처리 되나요? | | 해당 없음 | 해당 없음 | | |
+| ⑨ | 내일 날씨 어때? | | 해당 없음 | 해당 없음 | | |

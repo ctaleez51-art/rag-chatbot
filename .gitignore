@@ -27,6 +27,6 @@ dist-ssr
 .model
 
 # 제출하지 않아도 되는 것
-source/
+source/고친곳.md
 data/chunks.json
 public/moducon-docs.json
