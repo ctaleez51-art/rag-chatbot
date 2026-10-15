@@ -29,8 +29,8 @@
    `git clone https://github.com/ctaleez51-art/rag-chatbot.git`  
    `cd rag-chatbot`
 6. 설치 후 켜기:  
-   `npm install`  
-   `npm run dev`
+   `npm.cmd install`  
+   `npm.cmd run dev`
 8. 브라우저에서 http://localhost:5173 접속. 처음 한 번 뜻 검색용 모델(약 200MB)을 내려받는다.
 
 
