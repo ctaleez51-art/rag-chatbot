@@ -30,3 +30,7 @@ dist-ssr
 source/고친곳.md
 data/chunks.json
 public/moducon-docs.json
+
+# 로컬 에이전트 작업 규칙 (공개 저장소에 포함하지 않음)
+AGENTS.md
+AGENTS.override.md
